@@ -31,7 +31,7 @@ Many thanks to NoMore201 for the actual backend API (https://github.com/NoMore20
     * BACKUP_FOLDER = ./backup/ <- path to the backup folder (still WIP)
 * Create the download folder
 * Test the Crawler:
-'''python
+```python
 
 import CygeaPlayStoreCrawler as cpc	
 
@@ -46,8 +46,7 @@ crawler = cpc.PlaystoreCrawler("conf", SEARCH_ONLY)"""
 
 """Start the crawling process"""
 crawler.startCrawler()
-
-'''
+```
 
 ## TODO
 
