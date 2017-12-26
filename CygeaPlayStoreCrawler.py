@@ -95,7 +95,6 @@ class PlaystoreInterface():
 
 		#save auth token
 		user[AUTH_TOKEN] = api.authSubToken
-		print (api.authSubToken)
 		return (api, user)
 
 	# params

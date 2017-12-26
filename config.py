@@ -38,9 +38,9 @@ class CrawlerConfig():
 				if "MAX_THREAD_PER_PROC" in splitted_line[0]:
 					self.MAX_THREAD_PER_PROC = int(splitted_line[1])
 				if "DOWNLOAD_FOLDER" in splitted_line[0]:
-					self.DOWNLOAD_FOLDER = splitted_line[1]
+					self.DOWNLOAD_FOLDER = splitted_line[1].replace("\n", "")
 				if "BACKUP_FOLDER" in splitted_line[0]:
-					self.BACKUP_FOLDER = splitted_line[1]
+					self.BACKUP_FOLDER = splitted_line[1].replace("\n", "")
 	
 	def LoadDictionary(self):
 		nb_proc = self.MAX_PROC
