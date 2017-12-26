@@ -358,8 +358,4 @@ class PlaystoreCrawler():
 		for i in range(self.config.MAX_PROC):
 			self.PROC_LIST[i].join()
 
-		
 
-
-crawler = PlaystoreCrawler("conf", DOWNLOAD)
-crawler.startCrawler()
