@@ -55,7 +55,7 @@ class CrawlerConfig():
 			
 			# Separate dictionary between process
 			for i in range(len(dictionary)):
-				self.DICTIONARY[i%nb_proc] = dictionary[i]
+				self.DICTIONARY[i%nb_proc].append(dictionary[i])
 
 	# Parse all the availables accounts (format: email,password,auth_token,android_id,proxy)
 	def ParseResources(self):

@@ -159,20 +159,12 @@ class PlaystoreInterface():
 		
 		try:
 			message = api.search(word, 250, None) # Search the playstore with the word
+			self.releaseRessource(user)
+			return message
 		except:
 			print ("Error: HTTP 500 - one of the provided parameters is invalid")
 			self.releaseRessource(user)
 			api, user = self.loginToAccount()
-			return 0
-
-		try:
-			return message
-		except IndexError: # if we were blocked
-			# Auth token is no longer valid
-			user[AUTH_TOKEN] = None
-			print ("Account blocked, switching ...")
-			self.releaseRessource(user)
-			api, user = self.loginToAccount()           
 			return 0
 
 
@@ -301,7 +293,7 @@ class CrawlerProcess(multiprocessing.Process):
 		self.proc_progress = i
 		
 		# Wait until killing process is done
-		while KILL_FLAG == 1:
+		while self.KILL_FLAG == 1:
 			continue
 
 	def kill(self):
